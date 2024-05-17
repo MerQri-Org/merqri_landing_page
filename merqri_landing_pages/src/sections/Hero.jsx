@@ -11,8 +11,8 @@ const Hero = () => {
           </h1>
           <p className="w-[35rem] text-text_color text-sm mt-2">
             Your smooth move starts here! Unlock the best moving experience with
-            our curated list of top-notch moving companies. Let's make your
-            relocation stress-free and efficient !{" "}
+            our curated list of top-notch moving companies. Let's make  your
+            relocation stress-free and efficient!{" "}
           </p>
 
           <div className="mt-14">
@@ -32,7 +32,7 @@ const Hero = () => {
             <div  className=" bg-primary p-2 rounded-full">
               <goal.icon className="text-white text-[1.5rem]" />
             </div>
-            <p className="ml-4 text-text_color text-[16px] w-[100px] leading-5">{goal.title}</p>
+            <p className="ml-4 text-text_color text-[16px] w-[100px] leading-5 ">{goal.title}</p>
           </div>
         ))}
       </div>
