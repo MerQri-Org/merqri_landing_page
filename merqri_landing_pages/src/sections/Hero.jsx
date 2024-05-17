@@ -12,7 +12,7 @@ const Hero = () => {
           <p className="w-[35rem] text-text_color text-sm mt-2">
             Your smooth move starts here! Unlock the best moving experience with
             our curated list of top-notch moving companies. Let's make your
-            relocation stress-free and efficient!{" "}
+            relocation stress-free and efficient !{" "}
           </p>
 
           <div className="mt-14">
