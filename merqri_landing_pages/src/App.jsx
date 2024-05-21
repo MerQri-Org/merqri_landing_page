@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Partnership from "./pages/Partnership";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Waitlist from "./pages/Waitlist";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/partnership" element={<Partnership />} />
+          <Route path="waitlist" element={<Waitlist />} />
         </Routes>
         <Footer />
       </BroswerRouter>
