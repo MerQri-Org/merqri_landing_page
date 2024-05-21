@@ -21,9 +21,9 @@ const Home = () => {
       <section>
         <Partner />
       </section>
-      <section>
+      {/* <section>
         <Testimonies />
-      </section>
+      </section> */}
       <section>
         <Subscribe />
       </section>
