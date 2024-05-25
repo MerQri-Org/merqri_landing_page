@@ -59,8 +59,8 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className=" mt-10">
-          <img src="/images/about1.png" alt="" className="" width={800} />
+      <div className="mt-10">
+          <img src="/images/right.png" alt="" className="w-[1000px]"/>
           {/* <img src="/images/about2.png" alt="" className="sm:ml-[10rem] -mt-[10rem]" width={500} /> */}
       </div>
     </section>

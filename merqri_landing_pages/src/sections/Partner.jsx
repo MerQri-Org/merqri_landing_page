@@ -8,10 +8,10 @@ const Partner = () => {
     <section className=" bg-primary" id="partners">
       <div className="px-10 flex flex-col md:flex-row items-center justify-between py-24">
         <div className="relative w-[60%]">
-          <img src="/images/partner1.png" alt="" />
-          <div className="absolute top-[17rem] left-[15rem]">
+          <img src="/images/left.png" alt="" />
+          {/* <div className="absolute top-[17rem] left-[15rem]">
             <img src="/images/partner2.png" alt="" />
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-col items-center">
           <div className="mt-10">

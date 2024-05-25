@@ -20,7 +20,7 @@ const Services = () => {
               imgUrl="/images/service1.png"
               content="We offer a complete range of moving services, ensuring a seamless ‘door-to-door’ relocation experience for individuals."
             />
-            <Button bgColor="#ffff" text="Find Out More" color="#27285C" />
+            {/* <Button bgColor="#ffff" text="Find Out More" color="#27285C" /> */}
           </div>
           <div className="flex flex-col items-center">
             <ServiceBox
@@ -28,7 +28,7 @@ const Services = () => {
               imgUrl="/images/service2.png"
               content="We provide professional assistance in moving offices and institutions regardless of their business profile"
             />
-            <Button bgColor="#ffff" text="Find Out More" color="#27285C" />
+            {/* <Button bgColor="#ffff" text="Find Out More" color="#27285C" /> */}
           </div>
           <div className="flex flex-col items-center">
             <ServiceBox
@@ -36,7 +36,7 @@ const Services = () => {
               imgUrl="/images/service3.png"
               content="We provide professional assistance in moving offices and institutions, regardless of their business profile jlk."
             />
-            <Button bgColor="#ffff" text="Find Out More" color="#27285C" />
+            {/* <Button bgColor="#ffff" text="Find Out More" color="#27285C" /> */}
           </div>
         </div>
       </div>
