@@ -3,7 +3,7 @@ import Hero from "../sections/Hero";
 import Services from "../sections/Services";
 import AboutUs from "../sections/AboutUs";
 import Partner from "../sections/Partner";
-import Testimonies from "../sections/Testimonies";
+//import Testimonies from "../sections/Testimonies";
 import Subscribe from "../sections/Subscribe";
 
 const Home = () => {
