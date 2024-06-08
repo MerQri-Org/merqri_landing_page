@@ -1,6 +1,10 @@
-import React from "react";
+import { handleJoinWaitList } from "../apis/JoinWaitlist";
+import React, { useState } from "react";
 import { SlArrowRightCircle } from "react-icons/sl";
 const WaitlistHero = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   return (
     <section className="px-5 md:px-0 md:pl-10 py-10 flex flex-col md:flex-row gap-10 md:gap-0">
       <div className=" md:w-[60%] flex flex-col gap-20">
@@ -19,29 +23,36 @@ const WaitlistHero = () => {
         </div>
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-5 w-[85%]">
-            <label htmlFor="" className="text-secondary text-[2.5rem]">
+            <label htmlFor="" className="text-secondary text-[1.6rem]">
               Your Name
             </label>
             <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               type="text"
               className=" border-b-4 border-secondary focus:outline-none text-xl"
             />
           </div>
           <div className="flex flex-col gap-5 w-[85%]">
             <div className="flex justify-between">
-              <label htmlFor="" className="text-secondary text-[2.5rem]">
+              <label htmlFor="" className="text-secondary text-[1.6rem]">
                 Your Email
               </label>
-              <button className="text-secondary font-semibold py-2 px-4 rounded-lg cursor-pointer text-xs md:text-sm">
-                <SlArrowRightCircle size={50} />
+              <button 
+              onClick={(event) => handleJoinWaitList(name, email, setMessage, event)}
+              className="text-secondary font-semibold py-2 px-4 rounded-lg cursor-pointer text-xs md:text-sm">
+                <SlArrowRightCircle size={40} />
               </button>
             </div>
             <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               type="text"
               className="border-b-4 border-secondary focus:outline-none text-xl"
             />
           </div>
         </div>
+        {message && <div className="text-center text-[1.5rem] text-primary font-semibold">{message}</div>}
         <p className="md:w-[70%] text-sm">
           Stay tuned for the launch of Merqri and experience the difference a
           professional moving company can make.
