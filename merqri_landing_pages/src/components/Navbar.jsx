@@ -23,9 +23,10 @@ const Navbar = () => {
             <img src="/images/logo.png" alt="logo" className="h-8" />
           </Link>
           <div className="flex items-center">
-            <ul className="flex ml-10">
+            <ul className="flex gap-6">
+              <Link to="/" className="text-gray-600 font-semibold">Home</Link>
               {navLinks.map((link, index) => (
-                <li key={index} className="ml-6">
+                <li key={index} className="-ml-3">
                   <a
                     href={`#${link.id}`}
                     className="text-xs md:text-[15px] font-semibold text-gray-600 hover:text-black cursor-pointer"
@@ -34,6 +35,7 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
+              <Link to="/partnership" className="text-gray-600 font-semibold">Partners</Link>
             </ul>
           </div>
           <Link to="/waitlist"
