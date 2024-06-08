@@ -18,7 +18,7 @@ const AboutUs = () => {
 
         <div>
           <h1 className="text-secondary font-semibold">Why Choose Us</h1>
-          <div className="flex flex-col  gap-5 md:gap-2">
+          <div className="flex flex-col gap-5 md:gap-2">
             <div className="flex flex-col md:flex-row gap-5">
               <WhyCom
                 bgColor="#E9EAEF"

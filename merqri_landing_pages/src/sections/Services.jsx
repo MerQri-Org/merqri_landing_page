@@ -17,7 +17,7 @@ const Services = () => {
           <div className="flex flex-col items-center">
             <ServiceBox
               title="Affordable House Removals"
-              imgUrl="/images/service1.png"
+              imgUrl="/images/left1.png"
               content="We offer a complete range of moving services, ensuring a seamless ‘door-to-door’ relocation experience for individuals."
             />
             {/* <Button bgColor="#ffff" text="Find Out More" color="#27285C" /> */}

@@ -8,11 +8,11 @@ import box from "/images/box.png";
 export const navLinks = [
   {
     id: "home",
-    title: "Home",
+    // title: "Home",
   },
   {
     id: "partners",
-    title: "Partners",
+    // title: "Partners",
   },
   {
     id: "about",
