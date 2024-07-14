@@ -5,8 +5,11 @@ import Partnership from "./pages/Partnership";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Waitlist from "./pages/Waitlist";
+import usePageTracking from "./usePageTracking";
 
 const App = () => {
+  usePageTracking();
+  
   return (
     <div>
       <BroswerRouter>
