@@ -4,7 +4,7 @@ import { FaMoneyBills } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io5";
 import { FiFacebook } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
-import box from "/images/box.png";
+// import box from "/images/box.png";
 export const navLinks = [
   {
     id: "home",
@@ -45,43 +45,40 @@ export const goals = [
 export const services = [
   {
     id: "service-1",
-    image: "/images/box.png",
     title: "Affordable House Removals",
-    content:
+    description:
       "We offer a complete range of moving services, ensuring a seamless ‘door-to-door’ relocation experience for individuals.",
   },
   {
     id: "service-2",
-    image: "/images/box.png",
     title: "Office & Business Removals",
-    content:
+    description:
       "We provide professional assistance in moving offices and institutions, regardless of their business profile",
   },
   {
     id: "service-3",
-    image: "/images/box.png",
-    title: "We provide transportation services across the entire country.",
-    content:
-      "We provide professional assistance in moving offices and institutions, regardless of their business profile",
+    title: "International removals",
+    description:
+      "We provide transportation services across the entire country.",
   },
 ];
 
 export const footerLinks = [
-      {
-        name: "Instagram",
-        icon: IoLogoInstagram,
-        link: "/",
-      },
-      {
-        name: "Facebook",
-        icon: FiFacebook,
-        link: "/about",
-      },
-      {
-        name: "LinkedIn",
-        icon: FiLinkedin,
-        link: "/contact",
-      },
+  {
+    name: "Instagram",
+    icon: IoLogoInstagram,
+    link: "/",
+  },
+  {
+    name: "Facebook",
+    icon: FiFacebook,
+    link: "/about",
+  },
+  {
+    name: "LinkedIn",
+    icon: FiLinkedin,
+    link: "/contact",
+  },
 ];
 
 export const footerDetails1 = [
@@ -139,26 +136,56 @@ export const socialMedia = [
   },
 ];
 
-
 export const waitlistWhyChooseUs = [
-    {
-        title: "Quality",
-        content1: "Our team comprises experienced and highly trained professionals who are dedicated to handling your belongings with the utmost care and attention.",
-        content2: "We bring a level of professionalism that sets us apart in the moving industry.",
-    },
-    {
-        title: "Affordable",
-        content1: "Our team comprises experienced and highly trained professionals who are dedicated to handling your belongings with the utmost care and attention.",
-        content2: "We bring a level of professionalism that sets us apart in the moving industry.",
-    },
-    {
-        title: "Safety",
-        content1: "Our team comprises experienced and highly trained professionals who are dedicated to handling your belongings with the utmost care and attention.",
-        content2: "We bring a level of professionalism that sets us apart in the moving industry.",
-    },
-    {
-        title: "Efficiency",
-        content1: "Our team comprises experienced and highly trained professionals who are dedicated to handling your belongings with the utmost care and attention.",
-        content2: "We bring a level of professionalism that sets us apart in the moving industry.",
-    },
-]
+  {
+    title: "Quality",
+    content1:
+      "Our team comprises experienced and highly trained professionals who are dedicated to handling your belongings with the utmost care and attention.",
+    content2:
+      "We bring a level of professionalism that sets us apart in the moving industry.",
+  },
+  {
+    title: "Affordable",
+    content1:
+      "Our team comprises experienced and highly trained professionals who are dedicated to handling your belongings with the utmost care and attention.",
+    content2:
+      "We bring a level of professionalism that sets us apart in the moving industry.",
+  },
+  {
+    title: "Safety",
+    content1:
+      "Our team comprises experienced and highly trained professionals who are dedicated to handling your belongings with the utmost care and attention.",
+    content2:
+      "We bring a level of professionalism that sets us apart in the moving industry.",
+  },
+  {
+    title: "Efficiency",
+    content1:
+      "Our team comprises experienced and highly trained professionals who are dedicated to handling your belongings with the utmost care and attention.",
+    content2:
+      "We bring a level of professionalism that sets us apart in the moving industry.",
+  },
+];
+
+export const images = [
+  {
+    src: '/1.png',
+    alt: 'Slide 1'
+  },
+  {
+    src: '/house.png',
+    alt: 'Slide 2'
+  },
+  {
+    src: '/three.png',
+    alt: 'Slide 3'
+  },
+  {
+    src: '/four.png',
+    alt: 'Slide 4'
+  },
+  {
+    src: '/last.png',
+    alt: 'Slide 4'
+  }
+];

@@ -1,8 +1,5 @@
-import { useState } from "react";
 import { navLinks } from "../constants";
 import { IoMenu } from "react-icons/io5";
-// import logo from '../assets/logo.png'
-import { RiMenuFold2Line } from "react-icons/ri";
 import {
   Sheet,
   SheetContent,
@@ -11,12 +8,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "../components/ui/sheet";
-import Button from "./Button";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="">
+    <nav className="bg-white shadow-md">
       <div className="hidden sm:block">
         <div className="flex py-6 items-center justify-between navbar mx-20">
           <Link to="/">
@@ -24,7 +20,9 @@ const Navbar = () => {
           </Link>
           <div className="flex items-center">
             <ul className="flex gap-6">
-              <Link to="/" className="text-gray-600 font-semibold">Home</Link>
+              <Link to="/" className="text-gray-600 font-semibold">
+                Home
+              </Link>
               {navLinks.map((link, index) => (
                 <li key={index} className="-ml-3">
                   <a
@@ -35,25 +33,28 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
-              <Link to="/partnership" className="text-gray-600 font-semibold">Partners</Link>
+              <Link to="/partnership" className="text-gray-600 font-semibold">
+                Partners
+              </Link>
             </ul>
           </div>
-          <Link to="/waitlist"
+          <Link
+            to="/waitlist"
             className={`ml-4 bg-primary text-white font-semibold py-2 px-4 rounded-lg cursor-pointer text-xs md:text-sm`}
           >
-            Join Waitlist
+            Join The Waitlist 
           </Link>
         </div>
       </div>
 
       {/* Mobile View */}
-      <div className="sm:hidden bg-primary text-white p-4 w-full flex items-center justify-between">
-        <img src="/images/logo.png" alt="" className="w-[100px]"/>
+      <div className="sm:hidden bg-white shadow-md p-4 w-full flex items-center justify-between">
+        <img src="/images/logo.png" alt="Merqri Logo" className="h-8" />
         <Sheet>
           <SheetTrigger className="">
-            <IoMenu size={28} className="" />
+            <IoMenu size={28} className="text-gray-600" />
           </SheetTrigger>
-          <SheetContent className="bg-primary  pt-14">
+          <SheetContent className="bg-white pt-14">
             <SheetHeader>
               <SheetTitle className="flex">
                 <img src="/images/logo.png" alt="logo" className="h-8" />
@@ -65,7 +66,7 @@ const Navbar = () => {
                       <li key={index} className="">
                         <a
                           href={link.href}
-                          className="font-semibold hover:text-black cursor-pointer text-white"
+                          className="font-semibold hover:text-black cursor-pointer text-gray-600"
                         >
                           {link.title}
                         </a>

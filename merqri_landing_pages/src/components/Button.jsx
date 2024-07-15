@@ -1,17 +1,15 @@
-import React from "react";
-import { GoArrowUpRight } from "react-icons/go";
+/* eslint-disable react/prop-types */
 
-const Button = ({ bgColor, text, color }) => {
+import { Link } from 'react-router-dom';
+import { GoArrowUpRight } from 'react-icons/go';
+
+const Button = ({ to, text, className = '', icon: Icon = GoArrowUpRight, bgColor = 'bg-primary', ...props }) => {
   return (
-    <div className="flex items-center">
-      <button
-        className={`py-2 px-6 rounded-lg cursor-pointer hover:scale-[1.1] flex items-center gap-3`}
-        style={{ backgroundColor: bgColor, color: color }}
-      >
-        {text}
-        <GoArrowUpRight />
-      </button>
-    </div>
+    <button className={`${bgColor} text-white font-bold py-2 rounded-lg px-4 mt-4 md:mt-8 ${className}`} {...props}>
+      <Link to={to} className="flex items-center gap-1">
+        {text} {Icon && <Icon size={20} />}
+      </Link>
+    </button>
   );
 };
 
