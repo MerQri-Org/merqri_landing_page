@@ -1,9 +1,9 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 
-const WhyCom = ({title, content, titleColor, contentColor, bgColor}) => {
+const WhyCom = ({title, content, }) => {
   return (
-    <div style={{backgroundColor: bgColor}}  className='md:w-[28rem] p-[20px] rounded-xl mt-8'>
-        <p style={{color: contentColor}} className='text-[14px]'><span style={{color: titleColor}} className='font-semibold'>{title}: </span>{content}</p>
+    <div >
+        <p className='text-[14px]'><span  className='font-semibold'>{title}: </span>{content}</p>
     </div>
   )
 }

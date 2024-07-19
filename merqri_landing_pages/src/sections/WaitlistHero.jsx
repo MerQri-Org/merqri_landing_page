@@ -1,5 +1,5 @@
 import { handleJoinWaitList } from "../apis/JoinWaitlist";
-import React, { useState } from "react";
+import { useState } from "react";
 import { SlArrowRightCircle } from "react-icons/sl";
 const WaitlistHero = () => {
   const [name, setName] = useState("");
@@ -10,7 +10,7 @@ const WaitlistHero = () => {
       <div className=" md:w-[60%] flex flex-col gap-20">
         <div className="flex flex-col gap-5">
           <h1 className="text-[3rem] text-primary font-[500]">
-            Moving Made Easy: <br /> We'll Be There Soon!
+            Moving Made Easy: <br /> We&apos;ll Be There Soon!
           </h1>
           <p className="text-sm md:w-[80%]">
             Get ready for a smooth move with Merqri! Our app is coming soon,

@@ -1,19 +1,22 @@
-import React from "react";
-import { BrowserRouter as BroswerRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as BroswerRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Partnership from "./pages/Partnership";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Waitlist from "./pages/Waitlist";
-import usePageTracking from "./usePageTracking";
+// import usePageTracking from "./usePageTracking";
 
 const App = () => {
-  usePageTracking();
-  
+  // usePageTracking();
+
   return (
     <div>
       <BroswerRouter>
-      <Navbar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/partnership" element={<Partnership />} />

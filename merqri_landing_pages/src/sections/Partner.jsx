@@ -1,49 +1,53 @@
-import React from "react";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
-import { GoArrowUpRight } from "react-icons/go";
 
 const Partner = () => {
   return (
-    <section className=" bg-primary" id="partners">
-      <div className="px-10 flex flex-col md:flex-row items-center justify-between py-24">
-        <div className="relative w-[60%]">
-          <img src="/images/left.png" alt="" />
-          {/* <div className="absolute top-[17rem] left-[15rem]">
-            <img src="/images/partner2.png" alt="" />
-          </div> */}
+    <section className="px-10 py-14 md:px-20 md:py-24 bg-secondary ">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+        {/* Left Section: Image */}
+        <div className="relative">
+          <div className="absolute  top-14 right-5 md:right-16 md:top-32">
+            <div className="w-7 h-7 md:w-14 md:h-14 bg-white rounded-full"></div>
+          </div>
+          <img
+            src="/images/left.png"
+            alt="Description of your image"
+            className="relative md:w-[75%] mb-10 md:mb-0  mx-auto w-3/4  "
+          />
         </div>
-        <div className="flex flex-col items-center">
-          <div className="mt-10">
-            <h1 className=" text-white md:text-[2rem] font-semibold text-center">
-              EXPLORE LIMITLESS POSSIBILITIES WITH MERQRI: YOUR TRUSTED MOVING
-              PARTNER
-            </h1>
-            <p className="text-white text-sm text-center mt-5">
-              Are you a moving company seeking a reliable and strategic
-              partnership? Look no further! Name invites you to join hands with
-              us and unlock a world of opportunities in the moving industry.
-            </p>
-          </div>
-          <div className="mt-20 flex gap-8">
-            <div className=" w-[0.3rem] h-[4rem] bg-white" />
-            <p className="text-white mt-10 -ml-7">Expertise</p>
-            <div className=" w-[0.3rem] h-[4rem] bg-white" />
-            <p className="text-white mt-5 md:mt-10 -ml-7">Expanded Services</p>
-            <div className=" w-[0.3rem] h-[4rem] bg-white" />
-            <p className="text-white mt-10 -ml-7">Reliability</p>
-            <div className=" w-[0.3rem] h-[4rem] bg-white" />
-            {/* <p className="text-white mt-5 md:mt-10 -ml-7">Transparent Collaboration</p> */}
+
+        {/* Right Section: Text Content */}
+        <div className="text-start font-lato md:text-left">
+          <h2 className="text-lg   md:text-2xl font-bold text-white mb-4">
+            EXPLORE LIMITLESS POSSIBILITIES WITH MERQRI: YOUR TRUSTED MOVING
+            PARTNER
+          </h2>
+          <p className="text-sm md:text-lg text-white whitespace-normal">
+            Are you a moving company seeking a reliable and strategic
+            partnership? Look no further! Name invites you to join hands with us
+            and unlock a world of opportunities in the moving industry.
+          </p>
+          <div className="bg-none md:bg-slate-200 flex flex-wrap items-center gap-6 my-10 justify-center rounded-lg h-auto sm:h-10 w-full sm:w-90  text-white md:text-black">
+            <div className="flex items-center w-1/2 sm:w-auto ">
+              <img src="/head.png" alt="" className="w-5 " />
+              <p className="text-sm ml-2">Expertise</p>
+            </div>
+            <div className="flex items-center w-1/2 sm:w-auto">
+              <img src="/Vector1.png" alt="" className="w-5" />
+              <p className="text-sm ml-2">Expanded services</p>
+            </div>
+            <div className="flex items-center w-1/2 sm:w-auto">
+              <img src="/X.png" alt="" className="w-5" />
+              <p className="text-sm ml-2">Reliability</p>
+            </div>
+            <div className="flex items-center w-1/2 sm:w-auto">
+              <img src="/open.png" alt="" className="w-5" />
+              <p className="text-sm ml-2">Transparent collaboration</p>
+            </div>
           </div>
 
-
-          <div className="mt-24 flex items-center bg-secondary text-white font-semibold py-3 px-6 rounded-lg cursor-pointer text-xs md:text-sm gap-2">
-          <Link to="/waitlist"
-            className={``}
-          >
-            Join Waitlist
-          </Link>
-          <GoArrowUpRight size={23} />
+          <div className="flex justify-center">
+            <Button text=" Join The Waitlist" to="/waitlist" />
           </div>
         </div>
       </div>
