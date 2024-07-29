@@ -51,39 +51,54 @@ const Navbar = () => {
           </div>
         </div>
 
-      {/* Mobile View */}
-      <div className="sm:hidden bg-white shadow-md p-4 w-full flex items-center justify-between">
-        <img src="/images/logo.png" alt="Merqri Logo" className="h-8" />
-        <Sheet>
-          <SheetTrigger className="">
-            <IoMenu size={28} className="text-gray-600" />
-          </SheetTrigger>
-          <SheetContent className="bg-white pt-14">
-            <SheetHeader>
-              <SheetTitle className="flex">
-                <img src="/images/logo.png" alt="logo" className="h-8" />
-              </SheetTitle>
-              <SheetDescription className="flex justify-start">
-                <div className="mt-10">
-                  <ul className="flex flex-col text-left gap-10">
-                    {navLinks.map((link, index) => (
-                      <li key={index} className="">
-                        <a
-                          href={link.href}
-                          className="font-semibold hover:text-black cursor-pointer text-gray-600"
-                        >
-                          {link.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
-      </div>
-    </nav>
+        {/* Mobile View */}
+        <div className="sm:hidden bg-white shadow-md p-4 w-full flex items-center justify-between relative">
+          <Link to="/">
+            <img src="/images/logo.png" alt="Merqri Logo" className="h-8" />
+          </Link>
+          <button onClick={toggleMenu}>
+            {isMenuOpen ? (
+              <IoClose size={28} className="text-gray-600" />
+            ) : (
+              <IoMenu size={28} className="text-gray-600" />
+            )}
+          </button>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className="absolute top-full left-0 right-0 bg-white bg-opacity-90 shadow-lg mt-1 p-3 z-50"
+            >
+              <ul className="flex flex-col text-left gap-4">
+                {navLinks.map((link, index) => (
+                  <li key={index}>
+                    <ScrollLink
+                      to={link.id}
+                      smooth={true}
+                      duration={500}
+                      className="font-semibold hover:text-black cursor-pointer text-gray-600"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.title}
+                    </ScrollLink>
+                  </li>
+                ))}
+                <li>
+                  {/* Optional: Add more links or content here */}
+                </li>
+              </ul>
+            </motion.div>
+          )}
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="pt-16">
+        {/* Your main content goes here */}
+      </main>
+    </>
   );
 };
 
