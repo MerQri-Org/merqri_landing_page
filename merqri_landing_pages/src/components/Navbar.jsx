@@ -1,85 +1,107 @@
+import { useState } from "react";
 import { navLinks } from "../constants";
-import { IoMenu } from "react-icons/io5";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "../components/ui/sheet";
+import { IoMenu, IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
-  return (
-    <nav className="bg-white shadow-md">
-      <div className="hidden sm:block">
-        <div className="flex py-6 items-center justify-between navbar mx-20">
-          <Link to="/">
-            <img src="/images/logo.png" alt="logo" className="h-8" />
-          </Link>
-          <div className="flex items-center">
-            <ul className="flex gap-6">
-              <Link to="/" className="text-gray-600 font-semibold">
-                Home
-              </Link>
-              {navLinks.map((link, index) => (
-                <li key={index} className="-ml-3">
-                  <a
-                    href={`#${link.id}`}
-                    className="text-xs md:text-[15px] font-semibold text-gray-600 hover:text-black cursor-pointer"
-                  >
-                    {link.title}
-                  </a>
-                </li>
-              ))}
-              <Link to="/partnership" className="text-gray-600 font-semibold">
-                Partners
-              </Link>
-            </ul>
-          </div>
-          <Link
-            to="/waitlist"
-            className={`ml-4 bg-primary text-white font-semibold py-2 px-4 rounded-lg cursor-pointer text-xs md:text-sm`}
-          >
-            Join The Waitlist 
-          </Link>
-        </div>
-      </div>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      {/* Mobile View */}
-      <div className="sm:hidden bg-white shadow-md p-4 w-full flex items-center justify-between">
-        <img src="/images/logo.png" alt="Merqri Logo" className="h-8" />
-        <Sheet>
-          <SheetTrigger className="">
-            <IoMenu size={28} className="text-gray-600" />
-          </SheetTrigger>
-          <SheetContent className="bg-white pt-14">
-            <SheetHeader>
-              <SheetTitle className="flex">
-                <img src="/images/logo.png" alt="logo" className="h-8" />
-              </SheetTitle>
-              <SheetDescription className="flex justify-start">
-                <div className="mt-10">
-                  <ul className="flex flex-col text-left gap-10">
-                    {navLinks.map((link, index) => (
-                      <li key={index} className="">
-                        <a
-                          href={link.href}
-                          className="font-semibold hover:text-black cursor-pointer text-gray-600"
-                        >
-                          {link.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
-      </div>
-    </nav>
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <>
+      <nav className="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50">
+        <div className="hidden sm:block">
+          <div className="flex py-6 items-center justify-between navbar mx-20">
+            <Link to="/">
+              <img src="/images/logo.png" alt="logo" className="h-8" />
+            </Link>
+            <div className="flex items-center">
+              <ul className="flex gap-6">
+                <Link to="/" className="text-gray-600 font-semibold">
+                  Home
+                </Link>
+                {navLinks.map((link, index) => (
+                  <li key={index} className="-ml-3">
+                    <ScrollLink
+                      to={link.id}
+                      smooth={true}
+                      duration={500}
+                      className="text-xs md:text-[15px] font-semibold text-gray-600 hover:text-black cursor-pointer"
+                    >
+                      {link.title}
+                    </ScrollLink>
+                  </li>
+                ))}
+                <Link to="/partnership" className="text-gray-600 font-semibold">
+                  Partners
+                </Link>
+              </ul>
+            </div>
+            <Link
+              to="/waitlist"
+              className="ml-4 bg-primary text-white font-semibold py-2 px-4 rounded-lg cursor-pointer text-xs md:text-sm"
+            >
+              Join The Waitlist
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile View */}
+        <div className="sm:hidden bg-white shadow-md p-4 w-full flex items-center justify-between relative">
+          <Link to="/">
+            <img src="/images/logo.png" alt="Merqri Logo" className="h-8" />
+          </Link>
+          <button onClick={toggleMenu}>
+            {isMenuOpen ? (
+              <IoClose size={28} className="text-gray-600" />
+            ) : (
+              <IoMenu size={28} className="text-gray-600" />
+            )}
+          </button>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className="absolute top-full left-0 right-0 bg-white bg-opacity-90 shadow-lg mt-1 p-3 z-50"
+            >
+              <ul className="flex flex-col text-left gap-4">
+                {navLinks.map((link, index) => (
+                  <li key={index}>
+                    <ScrollLink
+                      to={link.id}
+                      smooth={true}
+                      duration={500}
+                      className="font-semibold hover:text-black cursor-pointer text-gray-600"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.title}
+                    </ScrollLink>
+                  </li>
+                ))}
+                <li>
+                <Link
+                  to="/partnership"
+                  className="font-semibold hover:text-black cursor-pointer text-gray-600"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Partners
+                </Link>
+                </li>
+              </ul>
+            </motion.div>
+          )}
+        </div>
+      </nav>
+
+     
+    </>
   );
 };
 
