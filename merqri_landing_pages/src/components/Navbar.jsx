@@ -69,7 +69,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="absolute top-full left-0 right-0 bg-white bg-opacity-90 shadow-lg mt-1 p-3 z-50"
+              className="absolute top-full left-0 right-0 bg-white bg-opacity-70 shadow-lg mt-1 p-3 z-50"
             >
               <ul className="flex flex-col text-left gap-4">
                 {navLinks.map((link, index) => (
