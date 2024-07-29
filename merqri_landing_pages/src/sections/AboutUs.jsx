@@ -3,7 +3,7 @@ import WhyCom from "../components/WhyCom";
 const AboutUs = () => {
   return (
     <section
-      className="flex flex-col md:flex-row px-9 md:px-20 justify-between py-16 items-center gap-12"
+      className="flex flex-col  md:flex-row px-9 md:px-20 justify-between py-16 items-center gap-12"
       id="about"
     >
       {/* Left Section */}

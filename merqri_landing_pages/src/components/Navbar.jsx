@@ -1,51 +1,55 @@
+import { useState } from "react";
 import { navLinks } from "../constants";
-import { IoMenu } from "react-icons/io5";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "../components/ui/sheet";
+import { IoMenu, IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav className="bg-white shadow-md">
-      <div className="hidden sm:block">
-        <div className="flex py-6 items-center justify-between navbar mx-20">
-          <Link to="/">
-            <img src="/images/logo.png" alt="logo" className="h-8" />
-          </Link>
-          <div className="flex items-center">
-            <ul className="flex gap-6">
-              <Link to="/" className="text-gray-600 font-semibold">
-                Home
-              </Link>
-              {navLinks.map((link, index) => (
-                <li key={index} className="-ml-3">
-                  <a
-                    href={`#${link.id}`}
-                    className="text-xs md:text-[15px] font-semibold text-gray-600 hover:text-black cursor-pointer"
-                  >
-                    {link.title}
-                  </a>
-                </li>
-              ))}
-              <Link to="/partnership" className="text-gray-600 font-semibold">
-                Partners
-              </Link>
-            </ul>
+    <>
+      <nav className="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50">
+        <div className="hidden sm:block">
+          <div className="flex py-6 items-center justify-between navbar mx-20">
+            <Link to="/">
+              <img src="/images/logo.png" alt="logo" className="h-8" />
+            </Link>
+            <div className="flex items-center">
+              <ul className="flex gap-6">
+                <Link to="/" className="text-gray-600 font-semibold">
+                  Home
+                </Link>
+                {navLinks.map((link, index) => (
+                  <li key={index} className="-ml-3">
+                    <ScrollLink
+                      to={link.id}
+                      smooth={true}
+                      duration={500}
+                      className="text-xs md:text-[15px] font-semibold text-gray-600 hover:text-black cursor-pointer"
+                    >
+                      {link.title}
+                    </ScrollLink>
+                  </li>
+                ))}
+                <Link to="/partnership" className="text-gray-600 font-semibold">
+                  Partners
+                </Link>
+              </ul>
+            </div>
+            <Link
+              to="/waitlist"
+              className="ml-4 bg-primary text-white font-semibold py-2 px-4 rounded-lg cursor-pointer text-xs md:text-sm"
+            >
+              Join The Waitlist
+            </Link>
           </div>
-          <Link
-            to="/waitlist"
-            className={`ml-4 bg-primary text-white font-semibold py-2 px-4 rounded-lg cursor-pointer text-xs md:text-sm`}
-          >
-            Join The Waitlist 
-          </Link>
         </div>
-      </div>
 
       {/* Mobile View */}
       <div className="sm:hidden bg-white shadow-md p-4 w-full flex items-center justify-between">
