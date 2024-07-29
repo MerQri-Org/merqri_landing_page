@@ -99,6 +99,7 @@ const Navbar = () => {
         {/* Your main content goes here */}
       </main>
     </>
+
   );
 };
 
