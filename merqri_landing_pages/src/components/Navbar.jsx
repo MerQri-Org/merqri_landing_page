@@ -65,10 +65,10 @@ const Navbar = () => {
           </button>
           {isMenuOpen && (
             <motion.div
-              initial={{ x: '-100%' }}
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ type: 'tween', duration: 0.3 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
               className="absolute top-full left-0 right-0 bg-white bg-opacity-90 shadow-lg mt-1 p-3 z-50"
             >
               <ul className="flex flex-col text-left gap-4">
@@ -86,18 +86,28 @@ const Navbar = () => {
                   </li>
                 ))}
                 <li>
-                  {/* Optional: Add more links or content here */}
+                  <Link
+                    to="/partnership"
+                    className="font-semibold hover:text-black cursor-pointer text-gray-600"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Partners
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/waitlist"
+                    className="font-semibold hover:text-black cursor-pointer text-gray-600"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Join The Waitlist
+                  </Link>
                 </li>
               </ul>
             </motion.div>
           )}
         </div>
       </nav>
-
-      {/* Main Content */}
-      <main className="pt-16">
-        {/* Your main content goes here */}
-      </main>
     </>
 
   );
