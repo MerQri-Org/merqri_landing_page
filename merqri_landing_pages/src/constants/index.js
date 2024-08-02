@@ -3,6 +3,7 @@ import { AiFillSafetyCertificate } from "react-icons/ai";
 import { FaMoneyBills } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io5";
 import { FiFacebook } from "react-icons/fi";
+import { FiTwitter } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 // import box from "/images/box.png";
 export const navLinks = [
@@ -67,7 +68,7 @@ export const footerLinks = [
   {
     name: "Instagram",
     icon: IoLogoInstagram,
-    link: "/",
+    link: "https://www.instagram.com/movewithqri?igsh=cjByYWxpZ3MyOXZw&utm_source=qr",
   },
   {
     name: "Facebook",
@@ -75,9 +76,14 @@ export const footerLinks = [
     link: "/about",
   },
   {
+    name: "Twitter",
+    icon: FiTwitter,
+    link: "https://x.com/movewithmerqri?s=21&t=1pq2fkM-m4QczdukiWBAyg",
+  },
+  {
     name: "LinkedIn",
     icon: FiLinkedin,
-    link: "/contact",
+    link: "https://www.linkedin.com/company/merqri/",
   },
 ];
 
