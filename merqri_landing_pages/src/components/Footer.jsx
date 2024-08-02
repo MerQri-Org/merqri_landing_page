@@ -9,7 +9,7 @@ import {
 const FooterLink = ({ link, size }) => (
   <a
     key={link.name}
-    href={link.href}
+    href={link.link}
     className="text-white text-base cursor-pointer"
     aria-label={link.name}
   >
