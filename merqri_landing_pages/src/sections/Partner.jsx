@@ -47,7 +47,7 @@ const Partner = () => {
           </div>
 
           <div className="flex justify-center">
-            <Button text=" Join The Waitlist" to="/waitlist" />
+            <Button text=" Partner With Us" to="/waitlist" />
           </div>
         </div>
       </div>

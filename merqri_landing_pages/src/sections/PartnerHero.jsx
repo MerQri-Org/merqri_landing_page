@@ -6,21 +6,21 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const PartnerHero = () => {
   return (
-    <section className="px-4 md:px-14 w-full bg-secondary" id="/">
+    <section className="px-4 md:px-14 w-full bg-white" id="/">
       <div className="md:flex items-center gap-28 py-24">
         <div className="">
-          <h1 className="text-[2rem] md:text-[3rem] w-full lg:w-[35rem] text-white font-[500]">
-            <span className=" text-primary"> WELCOME TO MERQRI -</span> Elevate
+          <h1 className="text-[2rem] md:text-[3rem] w-full lg:w-[35rem] text-secondary font-[500]">
+            <span className=" text-secondary"> WELCOME <span className="text-primary"> TO </span>MERQRI -</span> Elevate
             your moving Business with Us!
           </h1>
-          <p className="w-full lg:w-[35rem] text-white text-sm lg:text-[15px] mt-2">
+          <p className="w-full lg:w-[35rem] text-secondary text-sm lg:text-[15px] mt-2">
             At MERQRI, we believe in the power of strategic
             partnerships. If you're a moving company seeking growth, efficiency,
             and a competitive edge in the industry, you're in the right place.
             Explore the possibilities of becoming a valued vendor in our
             network.
           </p>
-          <div className="mt-24 flex items-center bg-white text-secondary font-semibold py-3 px-6 rounded-lg cursor-pointer text-xs md:text-sm gap-2 w-fit">
+          <div className="mt-24 flex items-center bg-primary text-white font-semibold py-3 px-6 rounded-lg cursor-pointer text-xs md:text-sm gap-2 w-fit">
             <Link to="/waitlist" className={``}>
               Join Waitlist
             </Link>
@@ -28,7 +28,8 @@ const PartnerHero = () => {
           </div>
         </div>
         <div className="">
-          <img src="/images/partner.png" alt="bus" className="w-[800px]" />
+          <img src="/right.png" alt="bubble" className="hidden lg:block absolute top-[20rem] right-[38rem] w-[50px]"/>
+          <img src="/images/Union.png" alt="union" className=" hidden lg:block relative top-[-10px] right-[-110px] w-[600px] " />
         </div>
       </div>
     </section>
