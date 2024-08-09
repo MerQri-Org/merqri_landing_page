@@ -7,7 +7,7 @@ import { GoArrowUpRight } from "react-icons/go";
 const PartnerHero = () => {
   return (
     <section className="px-4 md:px-14 w-full bg-white" id="/">
-      <div className="md:flex items-center gap-28 py-24">
+      <div className="md:flex items-center gap-28 pt-24 pb-10">
         <div className="">
           <h1 className="text-[2rem] md:text-[3rem] w-full lg:w-[35rem] text-secondary font-[500]">
             <span className=" text-secondary"> WELCOME <span className="text-primary"> TO </span>MERQRI -</span> Elevate
