@@ -5,7 +5,7 @@ const Subscribe = () => {
   const [email, setEmail] = useState("");
   // const [message, setMessage] = useState("");
   return (
-    <section className="bg-[#e9e9ec] px-10 py-14 md:px-20 md:py-24" id="contact">
+    <section className="bg-white px-10 py-14 md:px-20 md:py-24" id="contact">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
         <div className="">
           <img
