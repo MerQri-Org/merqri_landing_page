@@ -1,15 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import  { useLocation } from "react-router-dom"
 import Button from "../components/Button";
 const Subscribe = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  //useState for the pictures for different pages 
+  const [picture,setPicture]=useState("/images/left2.png")
+  const location = useLocation()
+
+  useEffect(
+    ()=>{
+      //changing picture based on the path
+      if(location.pathname==='/'){
+        setPicture('/images/left2.png')
+      }
+      else if (location.pathname==='/partnership'){
+        setPicture('/images/Union (1).png')
+      }
+    },[location.pathname]
+  )
   // const [message, setMessage] = useState("");
   return (
     <section className="bg-white px-10 py-14 md:px-20 md:py-24" id="contact">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
         <div className="">
           <img
-            src="/images/Union (1).png"
+            src={picture}
             alt=""
             className=" relative md:w-[75%] mb-10 md:mb-0  mx-auto w-3/4 "
           />
