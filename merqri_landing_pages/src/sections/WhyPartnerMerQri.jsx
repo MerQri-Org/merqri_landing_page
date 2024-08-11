@@ -3,7 +3,12 @@ import React from "react";
 
 const WhyPartnerMerQri = () => {
   return (
-    <section className="px-4 md:px-14 w-full py-20">
+    <section className="px-4 md:px-14 w-full pb-20">
+      <h1 className="text-[1.3rem] md:text-[1.7rem] w-full lg:w-[35rem] text-primary font-[400]">
+        <span>Why Partner with MerQri ?</span>
+      </h1>
+      <div className="bg-secondary w-[4rem] h-[0.4rem]" />
+      <br />
       <div className="flex flex-col md:flex-row items-center gap-10">
         <PartnerBox
           text="Increased Visibility: Joining our network opens doors to increased visibility and exposure within the moving industry. Benefit from being associated with a trusted and reputable brand."
