@@ -12,12 +12,12 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 pt-28 pb-16 text-center font-lato">
         <img
           src={imageLeft}
-          className="absolute left-0 top-32 h-4/6 opacity-60 hidden md:block"
+          className="absolute left-0 top-32 h-4/6 opacity-60  md:block w-1/5"
           alt="Left Image "
         />
         <img
           src={imageRight}
-          className="absolute right-40 top-80 h-16 opacity-60 hidden md:block"
+          className="absolute right-2  top-80 h-16 opacity-60  md:block w-1/30 "
           alt="Right Image"
         />
         <h1 className="text-2xl md:text-4xl font-bold text-secondary mb-4">
