@@ -29,8 +29,8 @@ const HeroSection = () => {
           make your relocation stress-free and efficient!
         </p>
         <button className="bg-primary hover:bg-secondary text-white font-bold py-2 rounded-lg px-4 mt-8">
-          <Link to="/waitlist" className="flex items-center gap-1">
-            Join The Waitlist <GoArrowUpRight size={20} />
+          <Link to="/booking" className="flex items-center gap-1">
+            Book Your Move <GoArrowUpRight size={20} />
           </Link>
         </button>
       </div>

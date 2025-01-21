@@ -43,10 +43,10 @@ const Navbar = () => {
               </ul>
             </div>
             <Link
-              to="/waitlist"
+              to="/booking"
               className="ml-4 bg-primary text-white font-semibold py-2 px-4 rounded-lg cursor-pointer text-xs md:text-sm"
             >
-              Join The Waitlist
+              Book Your Move
             </Link>
           </div>
         </div>
