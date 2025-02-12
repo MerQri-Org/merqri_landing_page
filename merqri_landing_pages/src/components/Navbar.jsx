@@ -96,11 +96,11 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    to="/waitlist"
+                    to="/booking"
                     className="font-semibold hover:text-black cursor-pointer text-gray-600"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Join The Waitlist
+                    Book Your Move
                   </Link>
                 </li>
               </ul>

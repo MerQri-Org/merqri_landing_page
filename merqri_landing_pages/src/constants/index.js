@@ -109,11 +109,11 @@ export const footerDetails2 = [
     links: [
       {
         name: "FAQ",
-        link: "/privacy-policy",
+        link: "/faq",
       },
       {
         name: "Contact",
-        link: "/terms-of-service",
+        link: "/contact",
       },
     ],
   },

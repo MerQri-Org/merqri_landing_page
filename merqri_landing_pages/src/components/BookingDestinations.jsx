@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
-
 import PropTypes from 'prop-types';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const LocationInput = ({ label, placeholder, value, onChange, id }) => (
   <div className="mb-6">
@@ -79,6 +80,8 @@ export default function BookingDestinationsForm({ goToNextStep }) {
   const [searchResults, setSearchResults] = useState([])
   const [isSearching, setIsSearching] = useState(false)
   const [selectedService, setSelectedService] = useState(null)
+  const [bookingDate, setBookingDate] = useState(null);
+  const [bookedDates, setBookedDates] = useState([]);
 
   const handleServiceSelect = (service) => {
     setSelectedService(service)
@@ -156,6 +159,23 @@ useEffect(() => {
     loadGoogleMapsScript();
 }, []);
 
+useEffect(() => {
+    const fetchBookedDates = async () => {
+      // Simulated delay
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      // Simulated booked dates
+      const dates = [new Date(), new Date(Date.now() + 86400000 * 2)];
+      setBookedDates(dates);
+    };
+    fetchBookedDates();
+  }, []);
+
+const isDateBooked = (date) => {
+    return bookedDates.some(
+      (bookedDate) => bookedDate.toDateString() === date.toDateString()
+    );
+  };
+
 return (
     <div className="max-w-xl mx-auto pt-16 px-8">
         <div className="flex justify-end mb-12">
@@ -216,6 +236,16 @@ return (
                 <div className="mt-8 p-4 bg-gray-100 rounded-lg">
                     <h3 className="text-lg font-semibold text-gray-900">Selected Service</h3>
                     <ServiceCard service={selectedService} />
+                    <div className="mt-4">
+                        <label className="block text-sm font-medium text-gray-900 mb-2">Select Booking Date</label>
+                        <DatePicker
+                            selected={bookingDate}
+                            onChange={(date) => setBookingDate(date)}
+                            filterDate={(date) => !isDateBooked(date)}
+                            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FF7A00] focus:border-transparent"
+                            placeholderText="Select a date"
+                        />
+                    </div>
                 </div>
             )}
 
@@ -225,7 +255,7 @@ return (
                 </button>
                 <button
                     onClick={goToNextStep}
-                    disabled={!selectedService}
+                    disabled={!selectedService || !bookingDate}
                     className="px-6 py-2 bg-[#FF7A00] text-white rounded-lg hover:bg-[#e66f00] transition-colors"
                 >
                     Next

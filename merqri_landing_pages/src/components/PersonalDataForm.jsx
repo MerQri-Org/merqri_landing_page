@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Button } from "../components/ui/button"
 
 const InputField = ({ label, placeholder, type = "text" }) => (
     <div className="mb-6">
@@ -28,7 +29,7 @@ const InputField = ({ label, placeholder, type = "text" }) => (
         <div className="flex justify-end mb-12">
           <div className="text-sm">
             Having issues?{" "}
-            <a href="#" className="text-[#FF7A00] font-medium">
+            <a href="/support" className="text-[#FF7A00] font-medium">
               Get Help
             </a>
           </div>
@@ -50,12 +51,12 @@ const InputField = ({ label, placeholder, type = "text" }) => (
   
             <InputField label="Phone Number" placeholder="Enter number" type="tel" />
   
-            <button
+            <Button
               type="submit"
-              className="w-full bg-[#FF7A00] text-white py-3 rounded-lg mt-4 hover:bg-[#e66f00] transition-colors"
+              className="w-full bg-[#FF7A00] text-white py-3 rounded-lg mt-4 hover:bg-[#e66f00] transition-colors" 
             >
               Next
-            </button>
+            </Button>
           </form>
         </div>
       </div>
