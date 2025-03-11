@@ -194,9 +194,9 @@ PaymentForm.propTypes = {
         )}
 
         <div className="flex justify-between mt-8">
-          <button onClick={() => window.history.back()} className="px-6 py-2 text-gray-600 hover:text-gray-900">
+          {/* <button onClick={() => window.history.back()} className="px-6 py-2 text-gray-600 hover:text-gray-900">
             Previous
-          </button>
+          </button> */}
           {paymentMethod === "saved" && (
             <button
               onClick={() => initializePayment(onSuccess, onClose)}
