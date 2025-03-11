@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Button } from "../components/ui/button"
+// import { Button } from "../components/ui/button"
 
 const InputField = ({ label, placeholder, type = "text" }) => (
     <div className="mb-6">
@@ -51,12 +51,12 @@ const InputField = ({ label, placeholder, type = "text" }) => (
   
             <InputField label="Phone Number" placeholder="Enter number" type="tel" />
   
-            <Button
+            {/* <Button
               type="submit"
               className="w-full bg-[#FF7A00] text-white py-3 rounded-lg mt-4 hover:bg-[#e66f00] transition-colors" 
             >
               Next
-            </Button>
+            </Button> */}
           </form>
         </div>
       </div>

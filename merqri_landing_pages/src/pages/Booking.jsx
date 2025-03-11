@@ -12,6 +12,10 @@ export default function Booking() {
     setCurrentStep((prevStep) => prevStep + 1);
   };
 
+  const goToPreviousStep = () => {
+    setCurrentStep((prevStep) => prevStep - 1);
+  };
+
   // Steps data
   const steps = ["Personal Info", "Destinations", "Payment", "Confirmation"];
 
@@ -68,17 +72,26 @@ export default function Booking() {
         {currentStep === 3 && <PaymentForm goToNextStep={goToNextStep} />}
         {currentStep === 4 && <ConfirmationPage />}
 
-        {/* Next Step Button - Centered on mobile */}
-        {/* {currentStep < 4 && (
-          <div className="flex justify-center mt-6">
+        {/* Navigation Buttons (Hidden on Confirmation Page) */}
+        {currentStep < 4 && (
+          <div className="flex justify-between mt-6">
+            {currentStep > 1 && (
+              <button
+                onClick={goToPreviousStep}
+                className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition"
+              >
+                Previous
+              </button>
+            )}
+
             <button
               onClick={goToNextStep}
-              className="bg-[#FF7A00] text-white px-6 py-2 rounded-lg hover:bg-[#e66f00] transition"
+              className="bg-[#FF7A00] text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition ml-auto"
             >
-              Next Step
+              Next
             </button>
           </div>
-        )} */}
+        )}
       </main>
     </div>
   );

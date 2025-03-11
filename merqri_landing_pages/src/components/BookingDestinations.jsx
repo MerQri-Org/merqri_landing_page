@@ -73,7 +73,7 @@ ServiceCard.propTypes = {
   }).isRequired,
 }
 
-export default function BookingDestinationsForm({ goToNextStep }) {
+export default function BookingDestinationsForm() {
   const [fromLocation, setFromLocation] = useState("")
   const [toLocation, setToLocation] = useState("")
   const [moveType, setMoveType] = useState("")
@@ -87,7 +87,7 @@ export default function BookingDestinationsForm({ goToNextStep }) {
     setSelectedService(service)
     console.log("Selected Service:", service) // Debugging log
   }
-
+   
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!fromLocation || !toLocation || !moveType) return
@@ -249,7 +249,7 @@ return (
                 </div>
             )}
 
-            <div className="flex justify-between mt-8">
+            {/* <div className="flex justify-between mt-8">
                 <button onClick={() => window.history.back()} className="px-6 py-2 text-gray-600 hover:text-gray-900">
                     Previous
                 </button>
@@ -260,7 +260,7 @@ return (
                 >
                     Next
                 </button>
-            </div>
+            </div> */}
         </div>
     </div>
 );
