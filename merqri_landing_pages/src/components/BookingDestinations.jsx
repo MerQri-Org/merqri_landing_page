@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+
+
 const LocationInput = ({ label, placeholder, value, onChange, id }) => (
   <div className="mb-6">
     <label className="block text-sm font-medium text-gray-900 mb-2">{label}</label>
@@ -140,24 +142,51 @@ export default function BookingDestinationsForm() {
 
 
 useEffect(() => {
-    const loadGoogleMapsScript = () => {
-        const script = document.createElement("script");
-        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAX3OGKVoMrsVQBNMoWABoKCkATHyOA7WQ&libraries=places`;
-        script.async = true;
-        script.onload = () => initializeAutocomplete();
-        document.body.appendChild(script);
-    };
+  const initializeAutocomplete = () => {
+    // Check if Google Maps API is loaded
+    if (!window.google || !window.google.maps || !window.google.maps.places) {
+      console.error("Google Maps API not loaded");
+      return;
+    }
 
-    const initializeAutocomplete = () => {
-        const fromInput = document.getElementById("from-location");
-        const toInput = document.getElementById("to-location");
+    const fromInput = document.getElementById("from-location");
+    const toInput = document.getElementById("to-location");
 
-        new window.google.maps.places.Autocomplete(fromInput);
-        new window.google.maps.places.Autocomplete(toInput);
-    };
+    if (fromInput) {
+      new window.google.maps.places.Autocomplete(fromInput, {
+        types: ['geocode'] // restrict to geographical locations
+      });
+    }
 
-    loadGoogleMapsScript();
-}, []);
+    if (toInput) {
+      new window.google.maps.places.Autocomplete(toInput, {
+        types: ['geocode']
+      });
+    }
+  };
+
+  const loadGoogleMapsScript = () => {
+    // Check if script is already loaded
+    if (window.google && window.google.maps && window.google.maps.places) {
+      initializeAutocomplete();
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.APP_GOOGLE_MAPS_API_KEY}&libraries=places`;
+    script.async = true;
+    script.defer = true;
+    script.onload = initializeAutocomplete;
+    script.onerror = () => console.error("Google Maps script failed to load");
+    document.body.appendChild(script);
+  };
+
+  loadGoogleMapsScript();
+
+  return () => {
+    // Cleanup if needed
+  };
+}, []); // Empty dependency array means this runs once on mount
 
 useEffect(() => {
     const fetchBookedDates = async () => {
