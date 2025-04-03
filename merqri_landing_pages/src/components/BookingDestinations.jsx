@@ -184,9 +184,9 @@ useEffect(() => {
   loadGoogleMapsScript();
 
   return () => {
-    // Cleanup if needed
+   
   };
-}, []); // Empty dependency array means this runs once on mount
+}, []); 
 
 useEffect(() => {
     const fetchBookedDates = async () => {
