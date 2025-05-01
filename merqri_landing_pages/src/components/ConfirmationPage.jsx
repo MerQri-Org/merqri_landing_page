@@ -1,11 +1,11 @@
 export default function ConfirmationPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4 bg-white">
-        <img
+        {/* <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20from%202025-01-20%2001-58-17-B0epvcuofLMF8GW1pOtweeYw5KRzr6.png"
           alt="MerQri Logo"
           className="w-16 h-16 mb-8"
-        />
+        /> */}
   
         <h1 className="text-2xl md:text-3xl font-semibold text-center text-gray-900 mb-3">
           Thank You For Choosing MerQri
