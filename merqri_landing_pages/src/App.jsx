@@ -3,6 +3,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import { Toast, ToastProvider, ToastViewport } from "./components/ui/toast"
 import Home from "./pages/Home";
 import Partnership from "./pages/Partnership";
 import Navbar from "./components/Navbar";
@@ -12,6 +13,7 @@ import Booking from "./pages/Booking"
 import Support from "./pages/Support"
 import FAQPage from "./pages/FAQs";
 import ContactPage from "./pages/Contact";
+import PartnerApplicationPage from "./pages/PartnerApplication"; 
 // import usePageTracking from "./usePageTracking";
 
 const App = () => {
@@ -19,6 +21,7 @@ const App = () => {
 
   return (
     <div>
+      <ToastProvider>
       <BroswerRouter>
         <Navbar />
         <Routes>
@@ -29,9 +32,14 @@ const App = () => {
           <Route path="/support" element={<Support />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path='/contact' element={<ContactPage />} />
+          <Route path='/partner-application' element={<PartnerApplicationPage />} />
         </Routes>
         <Footer />
+
+        <Toast />
+        <ToastViewport/>
       </BroswerRouter>
+      </ToastProvider>
     </div>
   );
 };

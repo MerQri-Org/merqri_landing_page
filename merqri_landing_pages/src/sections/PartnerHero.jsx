@@ -21,8 +21,8 @@ const PartnerHero = () => {
             network.
           </p>
           <div className="mt-24 flex items-center bg-primary text-white font-semibold py-3 px-6 rounded-lg cursor-pointer text-xs md:text-sm gap-2 w-fit">
-            <Link to="/waitlist" className={``}>
-              Join Waitlist
+            <Link to="/partner-application" className={``}>
+              Become A Partner
             </Link>
             <GoArrowUpRight size={23} />
           </div>

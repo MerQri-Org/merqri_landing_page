@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindcssAnimate from "tailwindcss-animate";
 // eslint-disable-next-line no-undef
 export const content = ["./index.html", "./src/**/*.{js,jsx}"];
 export const mode = "jit";
@@ -26,4 +27,4 @@ export const theme = {
     xl: "1700px",
   },
 };
-export const plugins = [];
+export const plugins = [tailwindcssAnimate];
